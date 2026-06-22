@@ -30,11 +30,6 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Configurar Pages (ativa automaticamente, se possível)
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
       - name: Instalar dependências
         run: npm ci
 
