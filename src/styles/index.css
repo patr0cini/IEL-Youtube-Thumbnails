@@ -1,0 +1,6 @@
+/* Ponto de entrada dos estilos — importa tudo por ordem de cascata. */
+@import './theme.css';
+@import './globals.css';
+@import './app.css';
+@import './form.css';
+@import './preview.css';

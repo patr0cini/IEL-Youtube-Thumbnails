@@ -1,0 +1,58 @@
+/* ------------------------------------------------------------------ *
+ * Pré-visualização (coluna direita).
+ * ------------------------------------------------------------------ */
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  height: 100%;
+}
+
+.preview__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.preview__title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--text-faint);
+}
+.preview__badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(240, 181, 66, 0.12);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Moldura do canvas (mantém o rácio 16:9) */
+.canvas-frame {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--canvas-frame);
+  box-shadow: var(--shadow-2);
+  border: 1px solid var(--border);
+}
+.canvas-frame canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Barra de ações da pré-visualização */
+.preview__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
