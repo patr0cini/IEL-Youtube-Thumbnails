@@ -4,7 +4,10 @@ import { fileURLToPath, URL } from 'node:url'
 
 // Configuração do Vite.
 // Os aliases facilitam imports e mantêm o código organizado e fácil de manter.
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+  // Em produção (GitHub Pages) o site fica em /IEL-Youtube-Thumbnails/.
+  // Em desenvolvimento mantém-se na raiz.
+  base: command === 'build' ? '/IEL-Youtube-Thumbnails/' : '/',
   plugins: [react()],
   resolve: {
     alias: {
@@ -17,4 +20,4 @@ export default defineConfig({
   },
   // As pastas de conteúdo (backgrounds, series, assets) vivem na raiz do projeto.
   // O `import.meta.glob` descobre-as em tempo de build (ver src/utils/backgrounds.js).
-})
+}))
